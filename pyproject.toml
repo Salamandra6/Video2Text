@@ -18,9 +18,14 @@ dependencies = [
     "customtkinter>=5.2.2",
 ]
 
+[project.optional-dependencies]
+build = [
+    "pyinstaller>=6.10.0",
+]
+
 [project.scripts]
 video2text = "video2text.cli:main"
-video2text-desktop = "video2text.desktop_app:main"
+video2text-desktop = "video2text.desktop_app_v2:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
