@@ -4,7 +4,8 @@ Convierte videos de internet en texto usando una canalización local:
 
 1. Descarga el audio/video desde una URL compatible con `yt-dlp`.
 2. Transcribe el audio localmente con `faster-whisper`.
-3. Guarda resultados en `.txt`, `.srt` y `.json`.
+3. Guarda resultados en `.txt`, `.srt`, `.json` y `.docx`.
+4. Incluye interfaz gráfica local estilo hacker cinematográfico.
 
 > Uso responsable: usa esta herramienta solo con contenido propio, autorizado o permitido por la ley y por los términos del sitio de origen.
 
@@ -50,7 +51,37 @@ python -m pip install --upgrade pip setuptools wheel
 pip install -e .
 ```
 
-## Uso básico
+## Ejecutar interfaz gráfica
+
+Desde la carpeta del proyecto:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\run-gui-windows.ps1
+```
+
+O manualmente:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+streamlit run src\video2text\gui.py
+```
+
+Si el navegador no se abre solo, entra a:
+
+```text
+http://localhost:8501
+```
+
+La interfaz gráfica incluye:
+
+- `Cargar Archivo (video)`
+- `Pegar URL`
+- `Procesar Video`
+- `Descargar TXT`
+- `Descargar Word`
+- Pantalla de transcripción en tiempo real
+
+## Uso por consola
 
 ```powershell
 video2text "https://www.youtube.com/watch?v=VIDEO_ID" --language es --model-size small
@@ -127,6 +158,7 @@ Por cada video se crean:
 - `transcript.txt`: texto limpio.
 - `segments.json`: segmentos con tiempo de inicio y término.
 - `subtitles.srt`: subtítulos.
+- `transcript.docx`: documento Word.
 - `metadata.json`: información básica del video.
 
 ## Actualizar dependencias
