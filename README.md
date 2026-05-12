@@ -5,7 +5,7 @@ Convierte videos de internet en texto usando una canalización local:
 1. Descarga el audio/video desde una URL compatible con `yt-dlp`.
 2. Transcribe el audio localmente con `faster-whisper`.
 3. Guarda resultados en `.txt`, `.srt`, `.json` y `.docx`.
-4. Incluye interfaz gráfica local estilo hacker cinematográfico.
+4. Incluye aplicación de escritorio para Windows con estilo hacker cinematográfico.
 
 > Uso responsable: usa esta herramienta solo con contenido propio, autorizado o permitido por la ley y por los términos del sitio de origen.
 
@@ -51,28 +51,28 @@ python -m pip install --upgrade pip setuptools wheel
 pip install -e .
 ```
 
-## Ejecutar interfaz gráfica
+## Ejecutar aplicación de escritorio
 
 Desde la carpeta del proyecto:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\run-gui-windows.ps1
+powershell -ExecutionPolicy Bypass -File .\scripts\run-desktop-windows.ps1
 ```
 
 O manualmente:
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
-streamlit run src\video2text\gui.py
+python -m video2text.desktop_app
 ```
 
-Si el navegador no se abre solo, entra a:
+También puedes crear un acceso directo en el escritorio:
 
-```text
-http://localhost:8501
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install-desktop-shortcut-windows.ps1
 ```
 
-La interfaz gráfica incluye:
+La aplicación de escritorio incluye:
 
 - `Cargar Archivo (video)`
 - `Pegar URL`
