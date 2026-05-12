@@ -21,7 +21,7 @@ try {
     & $PythonExe -m pip install -e .
 
     Write-Host "Starting Video2Text Desktop..." -ForegroundColor Green
-    & $PythonExe -m video2text.desktop_app
+    & $PythonExe -m video2text.desktop_app_v2
 
     if ($LASTEXITCODE -ne 0) {
         throw "Video2Text Desktop exited with code $LASTEXITCODE"
