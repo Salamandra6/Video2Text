@@ -69,7 +69,6 @@ class Video2TextDesktop(ctk.CTk):
             scrollbar_button_hover_color="#00ff88",
         )
         sidebar.grid(row=1, column=0, sticky="nsw", padx=16, pady=12)
-        sidebar.grid_propagate(False)
 
         ctk.CTkLabel(
             sidebar,
