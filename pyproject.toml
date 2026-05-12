@@ -14,12 +14,13 @@ dependencies = [
     "huggingface-hub>=0.23.0",
     "faster-whisper==1.1.1",
     "ctranslate2>=4.4,<5",
-    "streamlit>=1.36.0",
     "python-docx>=1.1.2",
+    "customtkinter>=5.2.2",
 ]
 
 [project.scripts]
 video2text = "video2text.cli:main"
+video2text-desktop = "video2text.desktop_app:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
